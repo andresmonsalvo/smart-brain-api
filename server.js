@@ -13,12 +13,12 @@ const db = knex({
   // connect to your own database here
   client: "pg",
   connection: {
-    //connectionString: process.env.DATABASE_URL,
-    //ssl: true,
-    host: "postgresql-cylindrical-54295",
+    connectionString: process.env.DATABASE_URL,
+    ssl: true,
+    /*host: "postgresql-cylindrical-54295",
     user: "postgres",
     password: "test",
-    database: "smart-brain",
+    database: "smart-brain",*/
   },
 });
 
