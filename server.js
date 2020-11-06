@@ -13,15 +13,22 @@ const db = knex({
   // connect to your own database here
   client: "pg",
   connection: {
-    connectionString: process.env.DATABASE_URL,
-    ssl: true,
-    /*host: "postgresql-cylindrical-54295",
+    /*connectionString: process.env.DATABASE_URL,
+    ssl: true,*/
+    //host: "postgresql-cylindrical-54295",
+    host: "127.0.0.1",
     user: "postgres",
     password: "test",
-    database: "smart-brain",*/
+    database: "smart-brain",
   },
 });
-
+// xxxxxxxxxxxxxxxxxx   new
+db.select("*")
+  .from("users")
+  .then((data) => {
+    console.log(data);
+  });
+// xxxxxxxxxxxxxxxxxx    new
 const app = express();
 
 app.use(cors());
